@@ -29,9 +29,6 @@ checkScreen()
     return 0
 }
 
-
-echo $result
-
 while pgrep -f "Xorg" > /dev/null; do
     checkScreen
     result=$?
