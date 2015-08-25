@@ -6,8 +6,10 @@ dpmsOff()
 }
 dpmsOn()
 {
-    xset +dpms
-    xset s on
+    if [ `xset -q | grep -ce 'DPMS is Disabled'` == 1 ];then
+        xset +dpms
+        xset s on
+    fi
 }
 
 checkScreen()
