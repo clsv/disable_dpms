@@ -1,13 +1,13 @@
 #!/bin/bash
 dpmsOff()
 {
+    xset -dpms
     xset s off
-	xset -dpms
 }
 dpmsOn()
 {
-    xset s on
     xset +dpms
+    xset s on
 }
 
 checkScreen()
@@ -25,7 +25,7 @@ checkScreen()
     #flashplayer detect
     if [ -n "`pgrep -f flashplayer.so`" ] || [ -n "`pgrep -f pepperflash.so`" ] ;then
         return 1
-	fi
+    fi
     return 0
 }
 
