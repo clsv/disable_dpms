@@ -1,8 +1,10 @@
 #!/bin/bash
 dpmsOff()
 {
-    xset -dpms
-    xset s off
+    if [ `xset -q | grep -ce 'Monitor is in Suspend'` == 0 ];then
+        xset -dpms
+        xset s off
+    fi
 }
 dpmsOn()
 {
@@ -34,7 +36,7 @@ checkScreen()
 while pgrep -f "Xorg" > /dev/null; do
     checkScreen
     result=$?
-    if [[ $result -eq 1 ]]; then
+    if [[ $result == 1 ]]; then
         dpmsOff
     else
         dpmsOn
