@@ -27,9 +27,10 @@ checkScreen()
         fi
     done
     #flashplayer detect
-    if [ -n "`pgrep -f flashplayer.so`" ] || [ -n "`pgrep -f pepperflash.so`" ] ;then
-        return 1
-    fi
+    #На хрен флеш!
+    #if [ -n "`pgrep -f flashplayer.so`" ] || [ -n "`pgrep -f pepperflash.so`" ] ;then
+    #    return 1
+    #fi
     return 0
 }
 
